@@ -4,9 +4,9 @@
   <subtitle>刘啸林的个人博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://iuiaoin.com/"/>
+  <link href="https://iuiaoin.github.io/"/>
   <updated>2017-06-16T06:25:24.000Z</updated>
-  <id>https://iuiaoin.com/</id>
+  <id>https://iuiaoin.github.io/</id>
   
   <author>
     <name>Xiaolin</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://iuiaoin.com/2017/06/15/hello-world/"/>
-    <id>https://iuiaoin.com/2017/06/15/hello-world/</id>
+    <link href="https://iuiaoin.github.io/2017/06/15/hello-world/"/>
+    <id>https://iuiaoin.github.io/2017/06/15/hello-world/</id>
     <published>2017-06-15T03:19:30.000Z</published>
     <updated>2017-06-16T06:25:24.000Z</updated>
     
@@ -39,10 +39,10 @@
     
     </summary>
     
-      <category term="Testing" scheme="https://iuiaoin.com/categories/Testing/"/>
+      <category term="Testing" scheme="https://iuiaoin.github.io/categories/Testing/"/>
     
     
-      <category term="Testing" scheme="https://iuiaoin.com/tags/Testing/"/>
+      <category term="Testing" scheme="https://iuiaoin.github.io/tags/Testing/"/>
     
   </entry>
   
