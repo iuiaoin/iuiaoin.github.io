@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iuiaoin.github.io/"/>
-  <updated>2017-06-16T06:25:24.000Z</updated>
+  <updated>2017-06-26T01:32:18.000Z</updated>
   <id>https://iuiaoin.github.io/</id>
   
   <author>
@@ -16,33 +16,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://iuiaoin.github.io/2017/06/15/hello-world/"/>
-    <id>https://iuiaoin.github.io/2017/06/15/hello-world/</id>
-    <published>2017-06-15T03:19:30.000Z</published>
-    <updated>2017-06-16T06:25:24.000Z</updated>
+    <title>macOS Sierra 10.12关机缓慢</title>
+    <link href="https://iuiaoin.github.io/2017/06/26/macOS%20Sierra%2010.12%E5%85%B3%E6%9C%BA%E7%BC%93%E6%85%A2/"/>
+    <id>https://iuiaoin.github.io/2017/06/26/macOS Sierra 10.12关机缓慢/</id>
+    <published>2017-06-26T00:55:18.000Z</published>
+    <updated>2017-06-26T01:32:18.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<p>在升级到sierra后，发现关机或重启的时间需要很久，原因是mysql和MacOS Sierra不兼容。这里给出 <a href="https://forums.macrumors.com/threads/macos-sierra-10-12-compatible-apps.1977335/" target="_blank" rel="external">软件不兼容列表</a>。</p>
+<p>知道了是mysql的问题之后，重装mysql的最新版本即可。</p>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p>首先按照stackoverflow给的 <a href="https://stackoverflow.com/questions/1436425/how-do-you-uninstall-mysql-from-mac-os-x" target="_blank" rel="external">卸载方案</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ sudo rm /usr/<span class="built_in">local</span>/mysql</div><div class="line">$ sudo rm -rf /usr/<span class="built_in">local</span>/mysql*</div><div class="line">$ sudo rm -rf /Library/StartupItems/MySQLCOM</div><div class="line">$ sudo rm -rf /Library/PreferencePanes/MySQL*</div><div class="line">$ rm -rf ~/Library/PreferencePanes/MySQL*</div><div class="line">$ sudo rm -rf /Library/Receipts/mysql*</div><div class="line">$ sudo rm -rf /Library/Receipts/MySQL*</div><div class="line">$ sudo rm -rf /var/db/receipts/com.mysql.*</div></pre></td></tr></table></figure></p>
+<h3 id="使用brewhome安装mysql"><a href="#使用brewhome安装mysql" class="headerlink" title="使用brewhome安装mysql"></a>使用brewhome安装mysql</h3><p>安装brewhome<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
+<p>安装mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install mysql</div></pre></td></tr></table></figure></p>
+<h3 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql.server start</div></pre></td></tr></table></figure>
+<h3 id="设置mysql开机自启"><a href="#设置mysql开机自启" class="headerlink" title="设置mysql开机自启"></a>设置mysql开机自启</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mkdir -p ~/Library/LaunchAgents</div><div class="line">$ ln -sfv /usr/<span class="built_in">local</span>/opt/mysql/*.plist ~/Library/LaunchAgents</div><div class="line">$ find /usr/<span class="built_in">local</span>/Cellar/mysql/ -name <span class="string">"homebrew.mxcl.mysql.plist"</span> -<span class="built_in">exec</span> cp &#123;&#125; ~/Library/LaunchAgents/ \\;</div><div class="line">$ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</div></pre></td></tr></table></figure>
+<p>OK！重启之后秒开秒关的感觉又回来了~</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;在升级到sierra后，发现关机或重启的时间需要很久，原因是mysql和MacOS Sierra不兼容。这里给出 &lt;a href=&quot;https://forums.macrumors.com/threads/macos-sierra-10-12-compatible-apps
     
     </summary>
     
-      <category term="Testing" scheme="https://iuiaoin.github.io/categories/Testing/"/>
+      <category term="macOS" scheme="https://iuiaoin.github.io/categories/macOS/"/>
     
     
-      <category term="Testing" scheme="https://iuiaoin.github.io/tags/Testing/"/>
+      <category term="macOS" scheme="https://iuiaoin.github.io/tags/macOS/"/>
     
   </entry>
   
