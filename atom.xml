@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iuiaoin.github.io/"/>
-  <updated>2017-11-02T08:10:45.000Z</updated>
+  <updated>2017-11-02T08:12:33.000Z</updated>
   <id>https://iuiaoin.github.io/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="https://iuiaoin.github.io/2017/11/02/%E6%80%BB%E7%BB%93%E5%8F%8A%E8%A7%84%E5%88%92/"/>
     <id>https://iuiaoin.github.io/2017/11/02/总结及规划/</id>
     <published>2017-11-01T16:00:00.000Z</published>
-    <updated>2017-11-02T08:10:45.000Z</updated>
+    <updated>2017-11-02T08:12:33.000Z</updated>
     
     <content type="html"><![CDATA[<p>以怎样的标准来要求自己、提升自己？</p>
-<h3 id="技术准备"><a href="#技术准备" class="headerlink" title="技术准备"></a>技术准备</h3><ul>
+<h3 id="技术准备"><a href="#技术准备" class="headerlink" title="技术准备"></a>技术准备</h3><ol>
 <li>补齐基础知识</li>
 <li><p>单点深挖</p>
-<p>  <em>大公司推崇一专多长</em></p>
-<p>  百度某总监：</p>
+<p> <em>大公司推崇一专多长</em></p>
+<p> 百度某总监：</p>
 <blockquote>
 <ul>
 <li>大学的时候以广度为主，拓展视野;</li>
@@ -44,10 +44,10 @@
 </li>
 <li><p>写文、分享</p>
 </li>
-</ul>
-<h3 id="思想准备"><a href="#思想准备" class="headerlink" title="思想准备"></a>思想准备</h3><ul>
+</ol>
+<h3 id="思想准备"><a href="#思想准备" class="headerlink" title="思想准备"></a>思想准备</h3><ol>
 <li><p>沟通能力</p>
-<p>  沟通要领</p>
+<p> 沟通要领</p>
 <ul>
 <li>用沟通代替自作主张</li>
 <li>多做反馈，主动反馈</li>
@@ -60,7 +60,7 @@
 </blockquote>
 </li>
 <li><p>问题到我为止</p>
-<p>  当产品让你看一个现网问题</p>
+<p> 当产品让你看一个现网问题</p>
 <blockquote>
 <p>“这不是前端问题，你问下后台同学”</p>
 <p>“我和后台某某同学对过，是他们那边xxx引起的问题。我们讨论后，有xxx和xxx两种方案，打算采用xxx方案，解决更彻底，预计xxx完成。虽然不是前端问题，但前端这边也打算做xxx的兼容优化，保证出问题时不影响体验，明天完成……”</p>
@@ -71,14 +71,14 @@
 <li><a href="http://www.dsb.cn/52907.html" target="_blank" rel="external">找到适合自己的工作方法</a></li>
 </ul>
 </li>
-</ul>
+</ol>
 <p>最后，<strong><em>乐观自信和技术能力一样重要</em></strong></p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;以怎样的标准来要求自己、提升自己？&lt;/p&gt;
-&lt;h3 id=&quot;技术准备&quot;&gt;&lt;a href=&quot;#技术准备&quot; class=&quot;headerlink&quot; title=&quot;技术准备&quot;&gt;&lt;/a&gt;技术准备&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&quot;技术准备&quot;&gt;&lt;a href=&quot;#技术准备&quot; class=&quot;headerlink&quot; title=&quot;技术准备&quot;&gt;&lt;/a&gt;技术准备&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;补齐基础知识&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;单点深挖&lt;/p&gt;
 &lt;p&gt;
