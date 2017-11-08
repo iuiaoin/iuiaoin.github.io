@@ -101,7 +101,7 @@
 <meta property="og:image" content="https://misc.aotu.io/JChehe/2016-8-24-css-3d-panorama/calc.png">
 <meta property="og:image" content="http://haitao.nos.netease.com/1d0ecf9c43884fa6ac6355e8da873891.png">
 <meta property="og:image" content="https://haitao.nos.netease.com/e2b7629d-e27a-4ab5-83c5-075836ff2520.png">
-<meta property="og:updated_time" content="2017-11-08T03:26:54.000Z">
+<meta property="og:updated_time" content="2017-11-08T03:29:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 3D Panorama及一些项目开发总结">
 <meta name="twitter:description" content="CSS3d项目涉及的技术主要是CSS3d，3D全景是其应用场景之一  优势：因为是基于div+css3实现,相对canvas webgl拥有更好的平台兼容性。 劣势：渲染性能相比canvas webgl要弱,只适合创建较小的三维面片场景。  渲染性能这点在项目完成后得到了证实🤣，由于使用了大量CSS3 Transform相关的属性(一个页面内上百个元素)，包括 平移（translate）、旋转（">
@@ -480,34 +480,6 @@
 <li>采用前紧后松的开发方式，项目中期遇到需求变更也能够游刃有余</li>
 <li>对于需求方提出的需求进行合理评估，若工作量或投入与收到的效益不成正比，则应主动反馈，确定另外的解决方案</li>
 </ul>
-<h5 id="工作方法"><a href="#工作方法" class="headerlink" title="工作方法"></a>工作方法</h5><ol>
-<li><p>沟通能力</p>
-<p> 沟通要领</p>
-<ul>
-<li>用沟通代替自作主张</li>
-<li>多做反馈，主动反馈</li>
-<li>有风险及时抛出</li>
-</ul>
-</li>
-<li><p>正视资源不足</p>
-<blockquote>
-<p>“如果什么都准备好了，那这个事情谁都能做，公司还要花高工资招你干嘛？”</p>
-</blockquote>
-</li>
-<li><p>问题到我为止</p>
-<p> 当产品让你看一个现网问题</p>
-<blockquote>
-<p>“这不是前端问题，你问下后台同学”</p>
-<p>“我和后台某某同学对过，是他们那边xxx引起的问题。我们讨论后，有xxx和xxx两种方案，打算采用xxx方案，解决更彻底，预计xxx完成。虽然不是前端问题，但前端这边也打算做xxx的兼容优化，保证出问题时不影响体验，明天完成……”</p>
-</blockquote>
-</li>
-<li><p>培养高效工作方法</p>
-<ul>
-<li><a href="http://www.dsb.cn/52907.html" target="_blank" rel="external">找到适合自己的工作方法</a></li>
-</ul>
-</li>
-</ol>
-<p>最后，<strong><em>乐观自信和技术能力一样重要</em></strong></p>
 
       
     </div>
@@ -734,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3d"><span class="nav-number">1.</span> <span class="nav-text">CSS3d</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#transform相关属性介绍："><span class="nav-number">1.1.</span> <span class="nav-text">transform相关属性介绍：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现CSS3D全景"><span class="nav-number">1.2.</span> <span class="nav-text">实现CSS3D全景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置视角"><span class="nav-number">1.3.</span> <span class="nav-text">设置视角</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对于全景图素材的要求"><span class="nav-number">1.4.</span> <span class="nav-text">对于全景图素材的要求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考资料"><span class="nav-number">1.5.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些总结"><span class="nav-number">2.</span> <span class="nav-text">一些总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#项目开发流程"><span class="nav-number">2.1.</span> <span class="nav-text">项目开发流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分析较复杂逻辑时使用脑图"><span class="nav-number">2.2.</span> <span class="nav-text">分析较复杂逻辑时使用脑图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工作量评估"><span class="nav-number">2.3.</span> <span class="nav-text">工作量评估</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工作方法"><span class="nav-number">2.4.</span> <span class="nav-text">工作方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3d"><span class="nav-number">1.</span> <span class="nav-text">CSS3d</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#transform相关属性介绍："><span class="nav-number">1.1.</span> <span class="nav-text">transform相关属性介绍：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现CSS3D全景"><span class="nav-number">1.2.</span> <span class="nav-text">实现CSS3D全景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置视角"><span class="nav-number">1.3.</span> <span class="nav-text">设置视角</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对于全景图素材的要求"><span class="nav-number">1.4.</span> <span class="nav-text">对于全景图素材的要求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考资料"><span class="nav-number">1.5.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些总结"><span class="nav-number">2.</span> <span class="nav-text">一些总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#项目开发流程"><span class="nav-number">2.1.</span> <span class="nav-text">项目开发流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分析较复杂逻辑时使用脑图"><span class="nav-number">2.2.</span> <span class="nav-text">分析较复杂逻辑时使用脑图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工作量评估"><span class="nav-number">2.3.</span> <span class="nav-text">工作量评估</span></a></li></ol></li></ol></div>
             
 
           </div>

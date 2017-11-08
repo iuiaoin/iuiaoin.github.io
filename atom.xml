@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iuiaoin.github.io/"/>
-  <updated>2017-11-08T03:26:54.000Z</updated>
+  <updated>2017-11-08T03:29:54.000Z</updated>
   <id>https://iuiaoin.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://iuiaoin.github.io/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/"/>
     <id>https://iuiaoin.github.io/2017/11/07/CSS 3D Panorama及一些项目开发总结/</id>
     <published>2017-11-06T16:00:00.000Z</published>
-    <updated>2017-11-08T03:26:54.000Z</updated>
+    <updated>2017-11-08T03:29:54.000Z</updated>
     
     <content type="html"><![CDATA[<h4 id="CSS3d"><a href="#CSS3d" class="headerlink" title="CSS3d"></a>CSS3d</h4><p>项目涉及的技术主要是CSS3d，3D全景是其应用场景之一</p>
 <ul>
@@ -69,34 +69,6 @@
 <li>采用前紧后松的开发方式，项目中期遇到需求变更也能够游刃有余</li>
 <li>对于需求方提出的需求进行合理评估，若工作量或投入与收到的效益不成正比，则应主动反馈，确定另外的解决方案</li>
 </ul>
-<h5 id="工作方法"><a href="#工作方法" class="headerlink" title="工作方法"></a>工作方法</h5><ol>
-<li><p>沟通能力</p>
-<p> 沟通要领</p>
-<ul>
-<li>用沟通代替自作主张</li>
-<li>多做反馈，主动反馈</li>
-<li>有风险及时抛出</li>
-</ul>
-</li>
-<li><p>正视资源不足</p>
-<blockquote>
-<p>“如果什么都准备好了，那这个事情谁都能做，公司还要花高工资招你干嘛？”</p>
-</blockquote>
-</li>
-<li><p>问题到我为止</p>
-<p> 当产品让你看一个现网问题</p>
-<blockquote>
-<p>“这不是前端问题，你问下后台同学”</p>
-<p>“我和后台某某同学对过，是他们那边xxx引起的问题。我们讨论后，有xxx和xxx两种方案，打算采用xxx方案，解决更彻底，预计xxx完成。虽然不是前端问题，但前端这边也打算做xxx的兼容优化，保证出问题时不影响体验，明天完成……”</p>
-</blockquote>
-</li>
-<li><p>培养高效工作方法</p>
-<ul>
-<li><a href="http://www.dsb.cn/52907.html" target="_blank" rel="external">找到适合自己的工作方法</a></li>
-</ul>
-</li>
-</ol>
-<p>最后，<strong><em>乐观自信和技术能力一样重要</em></strong></p>
 ]]></content>
     
     <summary type="html">
