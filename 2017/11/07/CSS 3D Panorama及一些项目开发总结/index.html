@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CSS3," />
 
 
 
@@ -89,15 +89,23 @@
 
 
 
-<meta name="description" content="熟知套路，创意无穷">
-<meta property="og:type" content="website">
-<meta property="og:title" content="iuiaoin">
-<meta property="og:url" content="https://iuiaoin.github.io/index.html">
+<meta name="description" content="CSS3d项目涉及的技术主要是CSS3d，3D全景是其应用场景之一  优势：因为是基于div+css3实现,相对canvas webgl拥有更好的平台兼容性。 劣势：渲染性能相比canvas webgl要弱,只适合创建较小的三维面片场景。  渲染性能这点在项目完成后得到了证实🤣，由于使用了大量CSS3 Transform相关的属性(一个页面内上百个元素)，包括 平移（translate）、旋转（">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 3D Panorama及一些项目开发总结">
+<meta property="og:url" content="https://iuiaoin.github.io/2017/11/07/CSS 3D Panorama及一些项目开发总结/index.html">
 <meta property="og:site_name" content="iuiaoin">
-<meta property="og:description" content="熟知套路，创意无穷">
+<meta property="og:description" content="CSS3d项目涉及的技术主要是CSS3d，3D全景是其应用场景之一  优势：因为是基于div+css3实现,相对canvas webgl拥有更好的平台兼容性。 劣势：渲染性能相比canvas webgl要弱,只适合创建较小的三维面片场景。  渲染性能这点在项目完成后得到了证实🤣，由于使用了大量CSS3 Transform相关的属性(一个页面内上百个元素)，包括 平移（translate）、旋转（">
+<meta property="og:image" content="https://misc.aotu.io/JChehe/2016-8-24-css-3d-panorama/panorama3d.jpg">
+<meta property="og:image" content="https://misc.aotu.io/JChehe/2016-8-24-css-3d-panorama/diagram.png">
+<meta property="og:image" content="https://misc.aotu.io/JChehe/2016-8-24-css-3d-panorama/calc.png">
+<meta property="og:image" content="http://haitao.nos.netease.com/1d0ecf9c43884fa6ac6355e8da873891.png">
+<meta property="og:image" content="https://haitao.nos.netease.com/e2b7629d-e27a-4ab5-83c5-075836ff2520.png">
+<meta property="og:updated_time" content="2017-11-08T03:26:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iuiaoin">
-<meta name="twitter:description" content="熟知套路，创意无穷">
+<meta name="twitter:title" content="CSS 3D Panorama及一些项目开发总结">
+<meta name="twitter:description" content="CSS3d项目涉及的技术主要是CSS3d，3D全景是其应用场景之一  优势：因为是基于div+css3实现,相对canvas webgl拥有更好的平台兼容性。 劣势：渲染性能相比canvas webgl要弱,只适合创建较小的三维面片场景。  渲染性能这点在项目完成后得到了证实🤣，由于使用了大量CSS3 Transform相关的属性(一个页面内上百个元素)，包括 平移（translate）、旋转（">
+<meta name="twitter:image" content="https://misc.aotu.io/JChehe/2016-8-24-css-3d-panorama/panorama3d.jpg">
 
 
 
@@ -125,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="https://iuiaoin.github.io/"/>
+  <link rel="canonical" href="https://iuiaoin.github.io/2017/11/07/CSS 3D Panorama及一些项目开发总结/"/>
 
 
 
 
 
-  <title> iuiaoin </title>
+  <title> CSS 3D Panorama及一些项目开发总结 | iuiaoin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -166,9 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -299,9 +305,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -331,10 +337,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/11/07/CSS 3D Panorama及一些项目开发总结/" itemprop="url">
-                  CSS 3D Panorama及一些项目开发总结
-                </a>
+                CSS 3D Panorama及一些项目开发总结
               
             
           </h1>
@@ -430,9 +433,7 @@
       
 
       
-        
-          
-            <h4 id="CSS3d"><a href="#CSS3d" class="headerlink" title="CSS3d"></a>CSS3d</h4><p>项目涉及的技术主要是CSS3d，3D全景是其应用场景之一</p>
+        <h4 id="CSS3d"><a href="#CSS3d" class="headerlink" title="CSS3d"></a>CSS3d</h4><p>项目涉及的技术主要是CSS3d，3D全景是其应用场景之一</p>
 <ul>
 <li>优势：因为是基于div+css3实现,相对canvas webgl拥有更好的平台兼容性。</li>
 <li>劣势：渲染性能相比canvas webgl要弱,只适合创建较小的三维面片场景。</li>
@@ -508,431 +509,72 @@
 </ol>
 <p>最后，<strong><em>乐观自信和技术能力一样重要</em></strong></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://iuiaoin.github.io/2017/11/02/总结及规划/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xiaolin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iuiaoin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/11/02/总结及规划/" itemprop="url">
-                  总结及规划
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-02T00:00:00+08:00">
-                2017-11-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/thinking/" itemprop="url" rel="index">
-                    <span itemprop="name">thinking</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/CSS3/" rel="tag"># CSS3</a>
           
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/02/总结及规划/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/11/02/总结及规划/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-             <span id="/2017/11/02/总结及规划/" class="leancloud_visitors" data-flag-title="总结及规划">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          
-            <p>以怎样的标准来要求自己、提升自己？</p>
-<h3 id="技术准备"><a href="#技术准备" class="headerlink" title="技术准备"></a>技术准备</h3><ol>
-<li>补齐基础知识</li>
-<li><p>单点深挖</p>
-<p> <em>大公司推崇一专多长</em></p>
-<p> 百度某总监：</p>
-<blockquote>
-<ul>
-<li>大学的时候以广度为主，拓展视野;</li>
-<li>工作之后以深度为主，单点深挖;</li>
-<li>当达到瓶颈后，再次向广度拓展，打通知识</li>
-</ul>
-</blockquote>
-</li>
-<li><p>以技术项目练兵</p>
-<ul>
-<li>挖掘技术项目：从业务优化出发</li>
-<li>挖掘技术项目：以好玩有趣为主  </li>
-</ul>
-</li>
-<li><p>写文、分享</p>
-</li>
-</ol>
-<h3 id="思想准备"><a href="#思想准备" class="headerlink" title="思想准备"></a>思想准备</h3><ol>
-<li><p>沟通能力</p>
-<p> 沟通要领</p>
-<ul>
-<li>用沟通代替自作主张</li>
-<li>多做反馈，主动反馈</li>
-<li>有风险及时抛出</li>
-</ul>
-</li>
-<li><p>正视资源不足</p>
-<blockquote>
-<p>“如果什么都准备好了，那这个事情谁都能做，公司还要花高工资招你干嘛？”</p>
-</blockquote>
-</li>
-<li><p>问题到我为止</p>
-<p> 当产品让你看一个现网问题</p>
-<blockquote>
-<p>“这不是前端问题，你问下后台同学”</p>
-<p>“我和后台某某同学对过，是他们那边xxx引起的问题。我们讨论后，有xxx和xxx两种方案，打算采用xxx方案，解决更彻底，预计xxx完成。虽然不是前端问题，但前端这边也打算做xxx的兼容优化，保证出问题时不影响体验，明天完成……”</p>
-</blockquote>
-</li>
-<li><p>培养高效工作方法</p>
-<ul>
-<li><a href="http://www.dsb.cn/52907.html" target="_blank" rel="external">找到适合自己的工作方法</a></li>
-</ul>
-</li>
-</ol>
-<p>最后，<strong><em>乐观自信和技术能力一样重要</em></strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://iuiaoin.github.io/2017/06/26/macOS Sierra 10.12关机缓慢/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xiaolin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iuiaoin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/11/02/总结及规划/" rel="next" title="总结及规划">
+                <i class="fa fa-chevron-left"></i> 总结及规划
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/06/26/macOS Sierra 10.12关机缓慢/" itemprop="url">
-                  macOS Sierra 10.12关机缓慢
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T08:55:18+08:00">
-                2017-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/macOS/" itemprop="url" rel="index">
-                    <span itemprop="name">macOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/26/macOS Sierra 10.12关机缓慢/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/06/26/macOS Sierra 10.12关机缓慢/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-             <span id="/2017/06/26/macOS Sierra 10.12关机缓慢/" class="leancloud_visitors" data-flag-title="macOS Sierra 10.12关机缓慢">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>在升级到sierra后，发现关机或重启的时间需要很久，原因是mysql和MacOS Sierra不兼容。这里给出 <a href="https://forums.macrumors.com/threads/macos-sierra-10-12-compatible-apps.1977335/" target="_blank" rel="external">软件不兼容列表</a>。</p>
-<p>知道了是mysql的问题之后，重装mysql的最新版本即可。</p>
-<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p>首先按照stackoverflow给的 <a href="https://stackoverflow.com/questions/1436425/how-do-you-uninstall-mysql-from-mac-os-x" target="_blank" rel="external">卸载方案</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ sudo rm /usr/<span class="built_in">local</span>/mysql</div><div class="line">$ sudo rm -rf /usr/<span class="built_in">local</span>/mysql*</div><div class="line">$ sudo rm -rf /Library/StartupItems/MySQLCOM</div><div class="line">$ sudo rm -rf /Library/PreferencePanes/MySQL*</div><div class="line">$ rm -rf ~/Library/PreferencePanes/MySQL*</div><div class="line">$ sudo rm -rf /Library/Receipts/mysql*</div><div class="line">$ sudo rm -rf /Library/Receipts/MySQL*</div><div class="line">$ sudo rm -rf /var/db/receipts/com.mysql.*</div></pre></td></tr></table></figure></p>
-<h3 id="使用brewhome安装mysql"><a href="#使用brewhome安装mysql" class="headerlink" title="使用brewhome安装mysql"></a>使用brewhome安装mysql</h3><p>安装brewhome<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
-<p>安装mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install mysql</div></pre></td></tr></table></figure></p>
-<h3 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql.server start</div></pre></td></tr></table></figure>
-<h3 id="设置mysql开机自启"><a href="#设置mysql开机自启" class="headerlink" title="设置mysql开机自启"></a>设置mysql开机自启</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mkdir -p ~/Library/LaunchAgents</div><div class="line">$ ln -sfv /usr/<span class="built_in">local</span>/opt/mysql/*.plist ~/Library/LaunchAgents</div><div class="line">$ find /usr/<span class="built_in">local</span>/Cellar/mysql/ -name <span class="string">"homebrew.mxcl.mysql.plist"</span> -<span class="built_in">exec</span> cp &#123;&#125; ~/Library/LaunchAgents/ \\;</div><div class="line">$ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</div></pre></td></tr></table></figure>
-<p>OK！重启之后秒开秒关的感觉又回来了~</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -940,6 +582,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -959,8 +607,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -1068,6 +725,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3d"><span class="nav-number">1.</span> <span class="nav-text">CSS3d</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#transform相关属性介绍："><span class="nav-number">1.1.</span> <span class="nav-text">transform相关属性介绍：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现CSS3D全景"><span class="nav-number">1.2.</span> <span class="nav-text">实现CSS3D全景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置视角"><span class="nav-number">1.3.</span> <span class="nav-text">设置视角</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对于全景图素材的要求"><span class="nav-number">1.4.</span> <span class="nav-text">对于全景图素材的要求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考资料"><span class="nav-number">1.5.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些总结"><span class="nav-number">2.</span> <span class="nav-text">一些总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#项目开发流程"><span class="nav-number">2.1.</span> <span class="nav-text">项目开发流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分析较复杂逻辑时使用脑图"><span class="nav-number">2.2.</span> <span class="nav-text">分析较复杂逻辑时使用脑图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工作量评估"><span class="nav-number">2.3.</span> <span class="nav-text">工作量评估</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工作方法"><span class="nav-number">2.4.</span> <span class="nav-text">工作方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -1174,6 +847,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
@@ -1197,6 +874,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 92260, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 92260, xid: "2017/11/07/CSS 3D Panorama及一些项目开发总结/"});
 		
 
 		(function() {
