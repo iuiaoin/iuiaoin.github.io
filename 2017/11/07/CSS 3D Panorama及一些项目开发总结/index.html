@@ -96,6 +96,7 @@
 <meta property="og:url" content="https://iuiaoin.github.io/2017/11/07/CSS 3D Panorama及一些项目开发总结/index.html">
 <meta property="og:site_name" content="iuiaoin">
 <meta property="og:description" content="CSS3d项目涉及的技术主要是CSS3d，3D全景是其应用场景之一  优势：因为是基于div+css3实现,相对canvas webgl拥有更好的平台兼容性。 劣势：渲染性能相比canvas webgl要弱,只适合创建较小的三维面片场景。  渲染性能这点在项目完成后得到了证实🤣，由于使用了大量CSS3 Transform相关的属性(一个页面内上百个元素)，包括 平移（translate）、旋转（">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://misc.aotu.io/JChehe/2016-8-24-css-3d-panorama/panorama3d.jpg">
 <meta property="og:image" content="https://misc.aotu.io/JChehe/2016-8-24-css-3d-panorama/diagram.png">
 <meta property="og:image" content="https://misc.aotu.io/JChehe/2016-8-24-css-3d-panorama/calc.png">
@@ -456,9 +457,9 @@
 <p><img src="https://misc.aotu.io/JChehe/2016-8-24-css-3d-panorama/calc.png" alt="img"></p>
 <p>计算过程</p>
 <p>由此可得到一个公用函数，只需传入含有元素的宽度和元素数量的对象，即可得到 r 值：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">calTranslateZ</span>(<span class="params">opts</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.round(opts.width / (<span class="number">2</span> * <span class="built_in">Math</span>.tan(<span class="built_in">Math</span>.PI / opts.number)))</div><div class="line">&#125;</div><div class="line">calTranlateZ(&#123;</div><div class="line">    <span class="attr">width</span>: <span class="number">210</span>,</div><div class="line">    <span class="attr">number</span>: <span class="number">9</span></div><div class="line">&#125;);  <span class="comment">// 288</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calTranslateZ</span>(<span class="params">opts</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.round(opts.width / (<span class="number">2</span> * <span class="built_in">Math</span>.tan(<span class="built_in">Math</span>.PI / opts.number)))</span><br><span class="line">&#125;</span><br><span class="line">calTranlateZ(&#123;</span><br><span class="line">    width: <span class="number">210</span>,</span><br><span class="line">    number: <span class="number">9</span></span><br><span class="line">&#125;);  <span class="comment">// 288</span></span><br></pre></td></tr></table></figure>
 <h5 id="设置视角"><a href="#设置视角" class="headerlink" title="设置视角"></a>设置视角</h5><p>正棱柱构建完成后，需要将我们的视角设置在正棱柱内，超过视角外的元素不会被浏览器渲染(translateZ &gt; perspective)，并且保证棱柱的正面都是指向正棱柱中心，就可以形成360°的环绕效果了。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#view</span>(<span class="selector-tag">perspective</span><span class="selector-pseudo">:1000px)</span></div><div class="line">    <span class="selector-id">#stage</span>(<span class="selector-tag">transform-style</span><span class="selector-pseudo">:preserve-3d)</span></div><div class="line">        <span class="selector-id">#cube</span>(<span class="selector-tag">transform-style</span><span class="selector-pseudo">:preserve-3d)</span></div><div class="line">            <span class="selector-class">.div</span>（<span class="selector-tag">width</span><span class="selector-pseudo">:600px</span>;<span class="selector-tag">height</span><span class="selector-pseudo">:600px</span>;） <span class="comment">/*组成棱柱的元素*/</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#view</span>(<span class="selector-tag">perspective</span><span class="selector-pseudo">:1000px)</span></span><br><span class="line">    <span class="selector-id">#stage</span>(<span class="selector-tag">transform-style</span><span class="selector-pseudo">:preserve-3d)</span></span><br><span class="line">        <span class="selector-id">#cube</span>(<span class="selector-tag">transform-style</span><span class="selector-pseudo">:preserve-3d)</span></span><br><span class="line">            <span class="selector-class">.div</span>（<span class="selector-tag">width</span><span class="selector-pseudo">:600px</span>;<span class="selector-tag">height</span><span class="selector-pseudo">:600px</span>;） <span class="comment">/*组成棱柱的元素*/</span></span><br></pre></td></tr></table></figure>
 <p>只要保证.div元素自身 Z 坐标和祖先元素 Z 坐标相加大于 #view 元素的 perspective 值即可。</p>
 <h5 id="对于全景图素材的要求"><a href="#对于全景图素材的要求" class="headerlink" title="对于全景图素材的要求"></a>对于全景图素材的要求</h5><ol>
 <li>水平方向上需要首尾相连</li>
@@ -466,9 +467,9 @@
 <li>图片尺寸不仅要考虑正视图的大小，还要考虑元素在上下旋转时依然能覆盖视野</li>
 </ol>
 <h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><ul>
-<li><a href="https://segmentfault.com/a/1190000009821454" target="_blank" rel="external">前端的3D(css3版本)–淘宝造物节3D创景的制作</a></li>
-<li><a href="https://aotu.io/notes/2016/08/24/2016-8-24-css-3d-panorama/" target="_blank" rel="external">CSS 3D Panorama - 淘宝造物节技术剖析</a></li>
-<li>另外项目中使用了一个小巧实用的辅助支持库,对相关元素及方法进行了封装：<a href="https://github.com/shrekshrek/css3d-engine" target="_blank" rel="external">css3d-engine</a></li>
+<li><a href="https://segmentfault.com/a/1190000009821454" target="_blank" rel="noopener">前端的3D(css3版本)–淘宝造物节3D创景的制作</a></li>
+<li><a href="https://aotu.io/notes/2016/08/24/2016-8-24-css-3d-panorama/" target="_blank" rel="noopener">CSS 3D Panorama - 淘宝造物节技术剖析</a></li>
+<li>另外项目中使用了一个小巧实用的辅助支持库,对相关元素及方法进行了封装：<a href="https://github.com/shrekshrek/css3d-engine" target="_blank" rel="noopener">css3d-engine</a></li>
 </ul>
 <h4 id="一些总结"><a href="#一些总结" class="headerlink" title="一些总结"></a>一些总结</h4><h5 id="项目开发流程"><a href="#项目开发流程" class="headerlink" title="项目开发流程"></a>项目开发流程</h5><p>当拿到项目需求后进行需求评审然后一般按照以下流程进行开发</p>
 <p><img src="http://haitao.nos.netease.com/1d0ecf9c43884fa6ac6355e8da873891.png" alt="img"></p>
@@ -604,7 +605,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -615,7 +616,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -626,7 +627,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -728,8 +729,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
