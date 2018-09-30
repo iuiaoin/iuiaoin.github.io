@@ -311,6 +311,198 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://iuiaoin.github.io/2018/09/28/函数式编程初探/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiaolin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iuiaoin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/09/28/函数式编程初探/" itemprop="url">
+                  函数式编程初探
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T00:00:00+08:00">
+                2018-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/28/函数式编程初探/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/09/28/函数式编程初探/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2018/09/28/函数式编程初探/" class="leancloud_visitors" data-flag-title="函数式编程初探">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="函数式编程初探"><a href="#函数式编程初探" class="headerlink" title="函数式编程初探"></a>函数式编程初探</h3><h4 id="什么是函数式编程"><a href="#什么是函数式编程" class="headerlink" title="什么是函数式编程"></a>什么是函数式编程</h4><p>函数式编程是一种编程思想或者说编程泛型，经典的命令式编程模型强调指令的执行，而函数式强调函数计算本身，主要思想是把运算过程尽量编写为一系列嵌套的函数调用。</p>
+<p>举个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span> + <span class="number">2</span> - <span class="number">3</span>) * <span class="number">4</span> / <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 命令式</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"><span class="keyword">const</span> b = a - <span class="number">3</span>;</span><br><span class="line"><span class="keyword">const</span> c = b * <span class="number">4</span>;</span><br><span class="line"><span class="keyword">const</span> d = c / <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数式</span></span><br><span class="line"><span class="keyword">const</span> result = divide(mutiply(subtract(add(<span class="number">1</span>, <span class="number">2</span>), <span class="number">3</span>), <span class="number">4</span>), <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p>可以看到命令式编程的特点是把每一个运算当做一个步骤来执行，通过步骤的组合最后得到结果。而函数式编程则把运算用函数来体现，通过函数的组合来得到运算结果。</p>
+<h4 id="函数式编程的特征"><a href="#函数式编程的特征" class="headerlink" title="函数式编程的特征"></a>函数式编程的特征</h4><h5 id="一等公民的函数"><a href="#一等公民的函数" class="headerlink" title="一等公民的函数"></a>一等公民的函数</h5><p>函数与其他的数据类型一样，是平等的，可以赋值给其他变量或者作为参数传递，以及作为其他函数的返回值，如下例中的increase</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> increase = <span class="function"><span class="params">val</span> =&gt;</span> val + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>].map(increase);</span><br></pre></td></tr></table></figure>
+<h5 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h5><p>纯函数是这样一种函数，即相同的输入，永远会得到相同的输出，而且没有任何可观察的副作用。副作用是指函数的内部与外部互动，比如说修改全局变量的值，产生运算外的其他结果。函数式编程强调没有副作用，函数要保持独立，所有的功能就是返回一个新的值而没有其他的行为。</p>
+<p>比如slice和splice，slice对于相同的输入能保证返回相同的输出，因此它是纯函数。而splice会改变调用它的数组，这就会产生可观察的副作用，数组永久的改变了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 纯的</span></span><br><span class="line">arr.slice(<span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">// =&gt; [1,2,3]</span></span><br><span class="line">arr.slice(<span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">// =&gt; [1,2,3]</span></span><br><span class="line">arr.slice(<span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">// =&gt; [1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//不纯的</span></span><br><span class="line">arr.splice(<span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">// =&gt; [1,2,3]</span></span><br><span class="line">arr.splice(<span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">// =&gt; [4,5]</span></span><br><span class="line">arr.splice(<span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">// =&gt; []</span></span><br></pre></td></tr></table></figure>
+<h5 id="用表达式代替语句"><a href="#用表达式代替语句" class="headerlink" title="用表达式代替语句"></a>用表达式代替语句</h5><p>表达式是一个单纯的运算并且总是有返回值，语句是执行某一操作，没有返回值。函数式编程要求只使用表达式不用语句，也就是每一步都是单纯运算并且有返回值。</p>
+<h5 id="不修改状态"><a href="#不修改状态" class="headerlink" title="不修改状态"></a>不修改状态</h5><p>函数式编程只是返回新的值，不修改系统的变量。</p>
+<p>在一般的语言中，变量用来保存状态，不修改变量意味着状态不能被保存在变量中。 函数式编程用参数来保存状态。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reverse = <span class="function">(<span class="params">string, reverseStr</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span>(!string.length) <span class="keyword">return</span> reverseStr;</span><br><span class="line">    <span class="keyword">return</span> reverse(string.substring(<span class="number">1</span>, string.length), string.substring(<span class="number">0</span>, <span class="number">1</span>) + reverseStr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面是一个用来反转字符串的递归函数，注意到它并没有使用变量来保存状态，而是使用参数来进行传递。</p>
+<p>并且它的最后一步是调用自身函数，这就是尾递归。尾调用在函数式编程中非常重要。因为递归在本质上是一种循环操作。纯粹的函数式编程语言没有循环操作命令，所有的循环都用递归实现，使用递归最好使用尾递归。(在浏览器层面目前仅safari支持，chrome的V8默认关闭尾递归优化功能，因为尾调用优化有隐式优化和调用栈丢失的问题)。</p>
+<h4 id="为什么要使用函数式编程"><a href="#为什么要使用函数式编程" class="headerlink" title="为什么要使用函数式编程"></a>为什么要使用函数式编程</h4><h5 id="开发效率"><a href="#开发效率" class="headerlink" title="开发效率"></a>开发效率</h5><p>函数式编程使用了大量的函数，减少了代码的重复，开发效率快。更容易和代码的模块化结合起来，方便管理和扩展。函数式编程不依赖和改变外界的状态，只要给定输入参数必然会返回相同的结果。因此每个函数都可以看做是独立的单元，有利于编写单元测试和调试。扩展时也只需要增加对应的运算函数即可。</p>
+<h5 id="可读性高"><a href="#可读性高" class="headerlink" title="可读性高"></a>可读性高</h5><p>函数式编程可以使用链式调用的写法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span> + <span class="number">2</span> - <span class="number">3</span>) * <span class="number">4</span> / <span class="number">5</span></span><br><span class="line"></span><br><span class="line">add(<span class="number">1</span>, <span class="number">2</span>).subtract(<span class="number">3</span>).mutiply(<span class="number">4</span>).divide(<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p>易读性强的代码就是最好的注释，能非常直观的表达含义，配合类型签名(type signatures)能够表露函数的行为和目的。</p>
+<h5 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h5><p>函数式编程是不会产生死锁的，因为它不会修改变量，所以不存在锁线程的问题。不用担心一个线程的数据被另一个线程修改，所以可以很安全的在多个线程上运行不同的任务，部署并发编程。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> action1 = doSth1();</span><br><span class="line"><span class="keyword">let</span> action2 = doSth2();</span><br><span class="line"><span class="keyword">let</span> action3 = doSth3();</span><br></pre></td></tr></table></figure>
+<p>action1和action2互不干扰，执行的先后顺序并不会影响最终结果，所以可以把它们分配在两个线程上完成。而在一般的编程模式中，action1可能会修改系统状态，而action2可能会用到这些状态，所以必须保证action2在action1后面执行，也就不能在其他线程上运行了。</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a href="https://75team.com/post/functional-how-far.html" target="_blank" rel="noopener">函数式编程离我们有多远</a></li>
+<li><a href="https://www.zhihu.com/question/28292740" target="_blank" rel="noopener">什么是函数式编程思维</a></li>
+<li><a href="https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/" target="_blank" rel="noopener">JS函数式编程指南</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://iuiaoin.github.io/2018/07/03/GraphQL初探/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1454,7 +1646,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
