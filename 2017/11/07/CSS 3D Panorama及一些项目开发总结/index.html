@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>CSS 3D Panorama及一些项目开发总结 | Declan&#39;s Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Declan's Blog"><meta name="msapplication-starturl" content="https://blog.iuiaoin.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Declan's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="CSS 3D Panorama及一些项目开发总结 | Declan&#39;s Blog"><meta property="og:site_name" content="Declan&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/"><meta property="og:locale" content="en"><meta name="description" content="CSS3d项目涉及的技术主要是 CSS3d，3D 全景是其应用场景之一  优势：因为是基于 div+css3 实现,相对 canvas webgl 拥有更好的平台兼容性。 劣势：渲染性能相比 canvas webgl 要弱,只适合创建较小的三维面片场景。  渲染性能这点在项目完成后得到了证实 🤣，由于使用了大量 CSS3 Transform 相关的属性(一个页面内上百个元素)，包括 平移（tra - Declan - Declan&#39;s Blog"><meta name="keywords" content="CSS3"><meta property="article:published_time" content="2017-11-07T04:09:43.000Z"><meta property="article:modified_time" content="2023-08-25T04:48:38.358Z"><meta property="og:updated_time" content="2023-08-25T04:48:38.358Z"><meta property="article:author" content="Declan"><meta property="article:tag" content="CSS3"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">
+
+    <meta name="generator" content="Hexo 6.3.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/",
+    "@type": "BlogPosting",
+    "logo": "https://blog.iuiaoin.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/"
+    },
+    "headline": "CSS 3D Panorama及一些项目开发总结 | Declan&#39;s Blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://blog.iuiaoin.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2017-11-07T04:09:43.000Z",
+    "dateModified": "2023-08-25T04:48:38.358Z",
+    "author": {
+        "@type": "Person",
+        "name": "Declan",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://blog.iuiaoin.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Declan&#39;s Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://blog.iuiaoin.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://blog.iuiaoin.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "CSS3",
+    "description": "CSS3d项目涉及的技术主要是 CSS3d，3D 全景是其应用场景之一  优势：因为是基于 div+css3 实现,相对 canvas webgl 拥有更好的平台兼容性。 劣势：渲染性能相比 canvas webgl 要弱,只适合创建较小的三维面片场景。  渲染性能这点在项目完成后得到了证实 🤣，由于使用了大量 CSS3 Transform 相关的属性(一个页面内上百个元素)，包括 平移（tra - Declan - Declan&#39;s Blog"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Declan&#39;s Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=Declan's Blog&url=https://blog.iuiaoin.com&pic=https://blog.iuiaoin.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=Declan's Blog&url=https://blog.iuiaoin.com&via=Declan" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.iuiaoin.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=https://blog.iuiaoin.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.iuiaoin.com&title=CSS 3D Panorama及一些项目开发总结" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Declan's Blog&title=CSS 3D Panorama及一些项目开发总结&summary=&pics=https://blog.iuiaoin.com/img/suka-favicon.ico&url=https://blog.iuiaoin.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=https://blog.iuiaoin.com&text=CSS 3D Panorama及一些项目开发总结" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADnklEQVR42u3b0Y7bMAxE0fz/T7dPBYqtzbnjbdZ0cPPSJtl6dQRIokj29esDXy9RokSJEvVxqNfw+vozf/7+z8MOvj971tG/OXr/9+d4nKJELUEdLroDxDTws0k6esbR980zjsYpStQ2VBpIC6afj4dp2IBEiXoqahrk0WI/m5B02E7vRYn6FFRzcE4/SwLmFACLEvUk1BQoHg2+vRieIaYJIIe1KFEbUdNDN/3537JJokS9EYWT73BRT5fC6cBOz3tL1UOUqDeg0gIlCRYapBJMlbz8OnGiRC1ATYs4XdCaAPVSYRoATw9fUaJuQpEic5OAIQdsmiByOa0TL6JE/RCKJPInKJmANDnT++n3iBL1BFRa+NPGkgJbWjggTVrVRiFK1A2ottjcJl3SwXoloBUlaiOqSZq0Cz3B6YaSNiZRoraiYsAYFjxpgKSbSgpwY4ZWlKibUWmALYQkZJpEKEmOihK1AZUC0JRcpJNDmqdokI2rHqJE3YCigWdK/NOLY7vxpAunKFEbUemyOC1gWqCbNqEr36NCtihRN6HIRbBJaJKANRXE00SKErUZdXqYFQ0hNImfAlea/BElajOKJP9J00fzLDoB1ZhEiVqASgt1SlJOGwFpziKFNpr4ESVqE2pagFcC1qsJlzQOHNCKErUERRYmuVRebRYmiZ+q6CZK1A2optGKBLDNc+hhn5qORYnahEoHWlyc4TBtkpHps5iUESVqAepKIDklKJvGKRrQkoBZlKgtqLZhgyTwp4OWNGXRiyrqIhMl6gYUCTSbTeNKAiVNMik4iBK1AdUWBJrCAE3Y0IRnPPhFiVqAoomSKenRNv1+Z4MSJeoJqGmQKRClif904KbCekp8ihK1CYUTG6/cHI8bDmGCpWokESVqAapJrtAFP204NLlCChSnG4UoUYtQtGGEJEKbggFJeOKAVpSoJaiUsG8SlVcSJ01Bry5kixL1Q6gmwd9c7FBCHzYtkg1JlKhtqPTAugD2Yv8hmiKqw1eUqBtRKaAln0+XyqahKv2+tHmJErUB1RymVxo/yKWTbBwpCSNK1BZUc5DSZt2m0NBOBG64EiXqRtSVBTstfnLZI4W4NokjStQmFF38qTBGCwLNdzjRKkrUA1C42Qkc2GQTaTaKsZAtStRS1DRY0vT43WIb3TBEidqGIgFtc2EjxWfSmFgV4ESJWoKiQWYKXs82C3rIT4c+umSKErUA9UkvUaJEiRL1Ma/fh6wyPrUjqwAAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">CSS 3D Panorama及一些项目开发总结</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="Declan's Avatar">
+        <span>2017-11-07</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=CSS 3D Panorama及一些项目开发总结&url=https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/&pic=https://blog.iuiaoin.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=CSS 3D Panorama及一些项目开发总结&url=https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/&via=Declan" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/&title=Declan's Blog" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Declan's Blog&title=Declan's Blog&summary=&pics=https://blog.iuiaoin.com/img/suka-favicon.ico&url=https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=https://blog.iuiaoin.com/2017/11/07/CSS%203D%20Panorama%E5%8F%8A%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/&text=Declan's Blog" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADnklEQVR42u3b0Y7bMAxE0fz/T7dPBYqtzbnjbdZ0cPPSJtl6dQRIokj29esDXy9RokSJEvVxqNfw+vozf/7+z8MOvj971tG/OXr/9+d4nKJELUEdLroDxDTws0k6esbR980zjsYpStQ2VBpIC6afj4dp2IBEiXoqahrk0WI/m5B02E7vRYn6FFRzcE4/SwLmFACLEvUk1BQoHg2+vRieIaYJIIe1KFEbUdNDN/3537JJokS9EYWT73BRT5fC6cBOz3tL1UOUqDeg0gIlCRYapBJMlbz8OnGiRC1ATYs4XdCaAPVSYRoATw9fUaJuQpEic5OAIQdsmiByOa0TL6JE/RCKJPInKJmANDnT++n3iBL1BFRa+NPGkgJbWjggTVrVRiFK1A2ottjcJl3SwXoloBUlaiOqSZq0Cz3B6YaSNiZRoraiYsAYFjxpgKSbSgpwY4ZWlKibUWmALYQkZJpEKEmOihK1AZUC0JRcpJNDmqdokI2rHqJE3YCigWdK/NOLY7vxpAunKFEbUemyOC1gWqCbNqEr36NCtihRN6HIRbBJaJKANRXE00SKErUZdXqYFQ0hNImfAlea/BElajOKJP9J00fzLDoB1ZhEiVqASgt1SlJOGwFpziKFNpr4ESVqE2pagFcC1qsJlzQOHNCKErUERRYmuVRebRYmiZ+q6CZK1A2optGKBLDNc+hhn5qORYnahEoHWlyc4TBtkpHps5iUESVqAepKIDklKJvGKRrQkoBZlKgtqLZhgyTwp4OWNGXRiyrqIhMl6gYUCTSbTeNKAiVNMik4iBK1AdUWBJrCAE3Y0IRnPPhFiVqAoomSKenRNv1+Z4MSJeoJqGmQKRClif904KbCekp8ihK1CYUTG6/cHI8bDmGCpWokESVqAapJrtAFP204NLlCChSnG4UoUYtQtGGEJEKbggFJeOKAVpSoJaiUsG8SlVcSJ01Bry5kixL1Q6gmwd9c7FBCHzYtkg1JlKhtqPTAugD2Yv8hmiKqw1eUqBtRKaAln0+XyqahKv2+tHmJErUB1RymVxo/yKWTbBwpCSNK1BZUc5DSZt2m0NBOBG64EiXqRtSVBTstfnLZI4W4NokjStQmFF38qTBGCwLNdzjRKkrUA1C42Qkc2GQTaTaKsZAtStRS1DRY0vT43WIb3TBEidqGIgFtc2EjxWfSmFgV4ESJWoKiQWYKXs82C3rIT4c+umSKErUA9UkvUaJEiRL1Ma/fh6wyPrUjqwAAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CSS3d"><span class="post-toc-number">1.</span> <span class="post-toc-text">CSS3d</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#transform-%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">transform 相关属性介绍：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AE%9E%E7%8E%B0-CSS3D-%E5%85%A8%E6%99%AF"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">实现 CSS3D 全景</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%A7%86%E8%A7%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">设置视角</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AF%B9%E4%BA%8E%E5%85%A8%E6%99%AF%E5%9B%BE%E7%B4%A0%E6%9D%90%E7%9A%84%E8%A6%81%E6%B1%82"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">对于全景图素材的要求</span></a></li></ol></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h3 id="CSS3d"><a href="#CSS3d" class="headerlink" title="CSS3d"></a>CSS3d</h3><p>项目涉及的技术主要是 CSS3d，3D 全景是其应用场景之一</p>
+<ul>
+<li>优势：因为是基于 div+css3 实现,相对 canvas webgl 拥有更好的平台兼容性。</li>
+<li>劣势：渲染性能相比 canvas webgl 要弱,只适合创建较小的三维面片场景。</li>
+</ul>
+<p>渲染性能这点在项目完成后得到了证实 🤣，由于使用了大量 CSS3 Transform 相关的属性(一个页面内上百个元素)，包括 平移（translate）、旋转（rotate）、缩放（scale），导致在性能较差的移动设备上出现了卡顿和发热的情况。</p>
+<h4 id="transform-相关属性介绍："><a href="#transform-相关属性介绍：" class="headerlink" title="transform 相关属性介绍："></a>transform 相关属性介绍：</h4><ul>
+<li>transform：修改 CSS 可视化模型的坐标空间，包括 平移（translate）、旋转（rotate）、缩放（scale） 和 扭曲（skew）</li>
+<li>perspective: 指定了观察者与 z&#x3D;0 平面的距离，使具有三维变换的元素产生透视效果</li>
+<li>transform-style：为子元素提供 2D 还是 3D 的场景。另外，该属性是非继承的</li>
+<li>transform-origin：允许被转换元素位置</li>
+</ul>
+<h4 id="实现-CSS3D-全景"><a href="#实现-CSS3D-全景" class="headerlink" title="实现 CSS3D 全景"></a>实现 CSS3D 全景</h4><p>什么是全景？</p>
+<p>当你站在一个点，身体旋转 360°，这个过程看到的画面就是以你为中心的全景图了，焦距不变时等同于站在一个圆柱体的中心。</p>
+<p>那么当我们有了全景图的素材后，将其切割为若干份，通过 transform 的平移和旋转将其拼为一个多棱柱，并通过 perspective 将视角置于棱柱中心(计算机世界是离散的，不能实现完美的圆柱，只能用近似圆柱的棱柱来代替)，就实现了全景效果。</p>
+<p>未来城活动页是将全景图分割成 60 等份，相邻的元素构成夹角 6°(360&#x2F;60,相邻两侧面相对于棱柱中心所构成的夹角)。需要注意的是：我们要确保每个元素的正面是指向棱柱中心的。所以要计算好每等份的旋转角度值后，再将元素向外（即 Z 轴方向）平移 r px。对于立方体的 r 就是 边长&#x2F;2。</p>
+<p>举个栗子：对于正九棱柱，每个元素的宽为 210px，对应的角度为 40°。</p>
+<p>由此可得到一个公用函数，只需传入含有元素的宽度和元素数量的对象，即可得到 r 值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">calTranslateZ</span>(<span class="params">opts</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">round</span>(opts.<span class="property">width</span> / (<span class="number">2</span> * <span class="title class_">Math</span>.<span class="title function_">tan</span>(<span class="title class_">Math</span>.<span class="property">PI</span> / opts.<span class="property">number</span>)));</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">calTranlateZ</span>(&#123;</span><br><span class="line">  <span class="attr">width</span>: <span class="number">210</span>,</span><br><span class="line">  <span class="attr">number</span>: <span class="number">9</span></span><br><span class="line">&#125;); <span class="comment">// 288</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="设置视角"><a href="#设置视角" class="headerlink" title="设置视角"></a>设置视角</h4><p>正棱柱构建完成后，需要将我们的视角设置在正棱柱内，超过视角外的元素不会被浏览器渲染(translateZ &gt; perspective)，并且保证棱柱的正面都是指向正棱柱中心，就可以形成 360° 的环绕效果了。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#view</span>(<span class="attribute">perspective</span>:<span class="number">1000px</span>)</span><br><span class="line">    #<span class="built_in">stage</span>(transform-style:preserve-<span class="number">3</span>d)</span><br><span class="line">        #<span class="built_in">cube</span>(transform-style:preserve-<span class="number">3</span>d)</span><br><span class="line">            .div（width:<span class="number">600px</span>;<span class="attribute">height</span>:<span class="number">600px</span>;） <span class="comment">/*组成棱柱的元素*/</span></span><br></pre></td></tr></table></figure>
+
+<p>只要保证.div 元素自身 Z 坐标和祖先元素 Z 坐标相加大于 #view 元素的 perspective 值即可。</p>
+<h4 id="对于全景图素材的要求"><a href="#对于全景图素材的要求" class="headerlink" title="对于全景图素材的要求"></a>对于全景图素材的要求</h4><ol>
+<li>水平方向上需要首尾相连</li>
+<li>因为效果图最终需要切成 N 等份，所以尽可能让 设计图的宽度能被 N 整除</li>
+<li>图片尺寸不仅要考虑正视图的大小，还要考虑元素在上下旋转时依然能覆盖视野</li>
+</ol>
+<p>参考资料</p>
+<ul>
+<li>前端的 3D(css3 版本)–淘宝造物节 3D 创景的制作</li>
+<li>CSS 3D Panorama - 淘宝造物节技术剖析</li>
+<li>另外项目中使用了一个小巧实用的辅助支持库,对相关元素及方法进行了封装：css3d-engine</li>
+</ul>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2023-08-25");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2017-11-07T04:09:43.000Z" itemprop="datePublished">2017-11-07</time>
+
+    , Updated at&nbsp;<time datetime="2023-08-25T04:48:38.358Z" itemprop="dateModified">2023-08-25</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+<a class="post-tags-list-item" href="/tags/CSS3/" rel="tag">#&nbsp;CSS3</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2018/05/09/%E6%B5%85%E8%B0%88HTTP2/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">浅谈HTTP/2</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2017/11/02/%E6%80%BB%E7%BB%93%E5%8F%8A%E8%A7%84%E5%88%92/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">总结及规划</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="https://blog.iuiaoin.com">Declan's Blog</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>
